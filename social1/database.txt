@@ -1,0 +1,52 @@
+Social project sql needed to work
+
+1. Database name - loginsystem
+
+first table:
+
+CREATE TABLE users(
+user_id int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+user_username TINYTEXT NOT NULL,
+user_email TINYTEXT NOT NULL,
+user_password LONGTEXT NOT NULL
+);
+
+second table:
+
+CREATE TABLE images(
+img_id int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+image varchar(256) NOT NULL,
+text varchar(256) NOT NULL
+);
+
+third table 
+
+CREATE TABLE profileimg (
+id int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+userId int(11) NOT NULL,
+status int(11) NOT NULL
+);
+
+fourth table:
+
+-- Table structure for table `login_details`
+
+
+CREATE TABLE `login_details` (
+  `login_details_id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `last_activity` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_type` enum('no','yes') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+fifth table:
+
+CREATE TABLE `chat_message` (
+  `chat_message_id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  `to_user_id` int(11) NOT NULL,
+  `from_user_id` int(11) NOT NULL,
+  `chat_message` text NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

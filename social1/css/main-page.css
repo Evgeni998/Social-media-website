@@ -1,0 +1,534 @@
+/*main menu */
+* {
+    
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    background-color:rgb(219, 219, 219);
+}
+body {
+    font-family: sans-serif;
+}
+.navbar {
+    background: rgb(104, 104, 104);
+    padding: 5px 20px; 
+     /* Set the navbar to fixed position here if i want it to be fixed*/
+    top:0;
+    width:100%; /*Stretch the navbar the whole width avaliable
+    top: 0 ;  Position the navbar at the top of the page */
+    z-index:1;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
+li.item {
+    font-size:24px;
+}
+li.item{
+    font-size: 20px;
+}
+a:hover {
+    text-decoration: underline;
+}
+.logo a:hover {
+    text-decoration: none;
+}
+.menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+}
+.logo {
+    flex: 1;
+}
+
+/* Mobile menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle{
+    order:1;
+}
+li {
+    display: block;
+}
+
+.item {
+    width:100%;
+    text-align: center;
+    order:2;
+    display:none;  
+}
+.item.active {
+    display:block;
+}
+.toggle {
+ cursor:pointer;
+}
+.bars {
+    background: #999;
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    width:18px;
+}
+.bars::before, .bars::after {    
+        background: #999;
+        content: "";
+        display: inline-block;
+        height: 2px;
+        position: absolute;
+        width:18px;   
+}
+.bars::before {
+    top:5px;
+}
+.bars::after {
+    top:-5px;
+}
+
+/* Desktop menu */
+@media all and (min-width: 900px) {
+    .navbar {
+        background: rgb(104, 104, 104);
+        padding: 5px 20px; 
+        position: fixed ; /* Set the navbar to fixed position */
+        top:0;
+        width:100%; /*Stretch the navbar the whole width avaliable
+        top: 0 ;  Position the navbar at the top of the page */
+    }
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 10px ;
+    }
+  
+}
+/*Main Content */
+.column-layout {
+   
+    height: 100%;
+    align-items: flex-start; 
+    padding: 20px 20px; 
+    margin-top: 63px;
+    max-width:1264px;
+    margin: 63px auto;
+}
+/*For phone*/
+/* ------------- */
+
+@media (min-width: 900px) {
+.column-layout {
+    display: flex;
+    justify-content: space-between;
+    }   
+  
+}
+/* ------------- */
+
+.base-column {
+    
+    margin-right:40px;
+    
+}
+.main-column {
+flex: 2;
+order:2;
+background-color:rgb(179, 179, 179);
+}
+
+.left-column {
+flex: 1;
+order:1;
+
+
+}
+.right-column {
+flex: 1;
+order:3;
+background-color: lightblue;
+margin-right: 0px;
+}
+
+/* Left column */
+.left-column-one {
+    background-color: rgb(241, 241, 241);
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.left-column-one > h4 {
+    padding:10px 0px;
+    text-align:center;
+}
+/*Since the upload button cant be styled i make label that does the same function and hide the real imput = file*/
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: none;
+    border-radius:1px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color:rgb(212, 41, 41);
+    text-align: center;
+    color:white;
+    
+}
+.upload-file {
+    text-align: center;
+}
+.custom-file-upload:hover {
+    background-color:rgb(212, 41, 41, 0.8);
+    color:black;
+}
+.upload-button {
+    border:none;
+    padding: 6px 12px;
+    margin-top:10px;
+    text-align:center;
+    background-color: rgb(212, 41, 41);
+    width:180px;
+    color:white;
+    font-size:16px;
+}
+.upload-button:hover {
+    background-color:rgb(212, 41, 41), 0.8;
+    color:black;
+}
+.button-upload {
+    text-align:center;
+}
+/*--------*/
+.left-column-one > p {
+    font-size:16px;
+    padding:10px;
+}
+.profile-img {
+    width:100px;
+    box-shadow: 5px 10px 18px #888888;
+    border-radius:2px;
+}
+.profile-avatar {
+    text-align:center;
+    margin: 10px 0px;
+    border-bottom: 1px solid rgb(180, 177, 177, 0.5);
+}
+.left-column-two {
+    margin-top: 20px;
+    border-radius: 3px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn1 {
+    border-radius: 3px 3px 0px 0px;
+}
+.btn3 {
+    border-radius: 0px 0px 3px 3px;
+}
+.left-column-two > button {
+    
+    display:block;
+    background-color:rgb(104, 104, 105);
+    border:none;
+    color:white;
+    padding: 8px 16px;
+    font-size:16px;
+    width:100%;
+    cursor:pointer;
+    text-decoration: none;
+    text-align: left;
+}
+.left-column-two > button:hover {
+    background-color: rgb(156, 156, 156);
+    color:black;
+    
+}
+.left-column-three {
+    margin-top: 20px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.left-column-three > h4 {
+    padding:10px;
+    text-align: center;
+    border-bottom: 1px solid rgb(170, 168, 168, 0.5);
+}
+.left-column-three a {
+    padding:10px;
+    display:block;
+    color:black;
+    text-decoration: none;
+    
+}
+.left-column-three li {
+    list-style-type:none ;
+    display:block;
+}
+.left-column-three a:hover {
+    background-color: rgb(145, 142, 142);
+    color:white;
+}
+
+/*Right Column(one)*/
+
+.right-column > * {
+    padding: 0 50px;
+}
+.right-column-one {
+    border-radius:3px;
+    background-color: rgb(241, 241, 241);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.right-column-two {
+    margin-top:20px;
+    background-color: rgb(241, 241, 241);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 3px;
+}
+.right-column-three {
+    margin-top:20px;
+ background-color: rgb(241,241,241);
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.right-column {
+    background-color:rgb(219, 219, 219);    
+}
+.right-column-one-one > h4 {
+    text-align:center;
+    padding:15px;
+}
+.right-column-one-one > p {
+    text-align:center;
+    padding:5px;
+}
+
+.right-column-one-one > button {
+    background-color:rgb(240, 58, 58);
+    border:none;
+    color:white;
+    padding: 8px 16px;
+    font-size:16px;
+    cursor:pointer;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto; 
+    border-radius: 3px;
+}
+.right-column-one-one > button:hover {
+    background-color: rgb(240, 58, 58, 0.8);
+}
+/*right column(two)*/
+.check {
+    border:none;
+    padding:10px;
+    background-color: rgb(52, 175, 52);
+    color:white
+}
+.remove {
+    border:none;
+    padding:10px;
+    background-color: rgb(211, 58, 58);
+    color:white;
+}
+.check-and-remove {
+    display:flex;
+    padding-bottom: 10px;
+}
+.check-and-remove > button {
+   flex:1;
+}
+.check:hover {
+    background-color: rgb(52, 175, 52, 0.8);  
+    color: black;
+}
+.remove:hover {
+    background-color: rgb(211, 58, 58, 0.8);
+    color:black;
+}
+.right-column-two-two > h4 {
+    text-align: center;
+    padding:10px;
+}
+/* right column(three) */
+.right-column-three-three {
+    height:200px;
+    display: flex;
+    justify-content: center;
+}
+.ads {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* main-column */
+.main-column {
+background-color: rgb(219,219,219);
+}
+.img-upload {
+    padding:15px 0px;
+    background-color:rgb(241, 241, 241);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height:auto;
+    max-width:100%;
+}
+
+.choose-and-upload {
+    background-color:rgb(240, 240, 240);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.upload-picture-button {
+    border: none;
+    border-radius:1px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color:rgb(212, 41, 41);
+    text-align: center;
+    color:white;
+}
+
+.upload-picture-button:hover {
+    background-color: rgb(212, 41, 41, 0.8);
+    color:black;
+}
+/*--------------------MODAL IMAGE--------------------------*/
+#myImg {
+  
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+/* Ripple effect on all buttons*/
+/*--------------------Modal image ends here------------------------*/
+button {
+    overflow: hidden;
+    position: relative;
+}
+button .ripple {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+button:focus {outline:0;}
